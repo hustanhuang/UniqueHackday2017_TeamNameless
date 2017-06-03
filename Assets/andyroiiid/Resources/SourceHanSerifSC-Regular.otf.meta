@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: a23916108a61b4241b35e3b2d72935e2
+timeCreated: 1496531206
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Source Han Serif SC
+  fontNames:
+  - Source Han Serif SC
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using DG.Tweening;
 
 public class ScriptsDisplayer : MonoBehaviour
 {
-    public Text text;
+    public TextMeshProUGUI text;
+
     public float sepTime = 1.0f;
     public float switchTime = 1.0f;
     public float onTime = 2.0f;
@@ -35,12 +37,12 @@ public class ScriptsDisplayer : MonoBehaviour
         StartCoroutine(WaitAndChangeText());
     }
 
-    private static float GetAlpha(Text t)
+    private static float GetAlpha(TextMeshProUGUI t)
     {
         return t.color.a;
     }
 
-    private static void SetAlpha(Text t, float x)
+    private static void SetAlpha(TextMeshProUGUI t, float x)
     {
         Color c = t.color;
         c.a = x;
@@ -49,7 +51,8 @@ public class ScriptsDisplayer : MonoBehaviour
 
     public void ChangeText()
     {
-        text.text = _texts[_progess++];
+        Debug.Log("set text " + _texts[_progess]);
+        text.SetText(_texts[_progess++]);
 
         Sequence seq = DOTween.Sequence();
         seq.Append(DOTween.To(() => GetAlpha(text), (x) => SetAlpha(text, x), 1, switchTime));
