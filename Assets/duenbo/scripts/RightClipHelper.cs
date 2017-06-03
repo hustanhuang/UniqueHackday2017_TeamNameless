@@ -65,6 +65,7 @@ public class RightClipHelper : MonoBehaviour {
             MainText.text = "";
             NoteText.text = "";
             Controller03.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 

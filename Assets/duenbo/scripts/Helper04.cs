@@ -34,27 +34,36 @@ public class Helper04 : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             NoteText.text = "";
+            MainText.text = "";
             isStart = true;
             isMouseDown = true;
         }
         if (Input.GetMouseButtonUp(0))
         {
-            camera.DOShakePosition(1, new Vector3(3, 3, 0));
-            isStart = true;
-            
             isMouseDown = false;
-            
-            if (!isPlay)
+            if (isStart)
             {
-                audio.Play();
-                isPlay = true;
-            }
-            if (8 < timer && timer < 9)
-            {
-                target.SetActive(true);
-                gameObject.SetActive(false);
-            }
+                camera.DOShakePosition(1, new Vector3(3, 3, 0));
+                isStart = false;
 
+                
+
+                if (!isPlay)
+                {
+                    audio.Play();
+                    isPlay = true;
+                }
+                if (8 < timer && timer < 9)
+                {
+                    target.SetActive(true);
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    MainText.text = "“夏蚊成雷，私拟作群鹤舞于空中，心之——“";
+                    NoteText.text = "提示：按住鼠标，并在在开始计时8秒至9秒之间松开。（准时松开即代表打死蚊子）按下鼠标，";
+                }
+            }
         }
         if (isStart&&isMouseDown)
         {
@@ -71,6 +80,10 @@ public class Helper04 : MonoBehaviour {
             {
                 //isPlay = false;
                 MainText.text = "3";
+            }
+            if(timer>4)
+            {
+                MainText.text = "";
             }
 
         }

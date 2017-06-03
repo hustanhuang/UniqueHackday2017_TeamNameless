@@ -43,6 +43,7 @@ public class Controller_03 : MonoBehaviour {
         if (stopSound)
         {
             audio.Stop();
+            gameObject.SetActive(false);
         }
 
     }
