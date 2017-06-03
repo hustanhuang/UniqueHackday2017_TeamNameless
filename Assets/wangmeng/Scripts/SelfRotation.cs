@@ -22,6 +22,7 @@ public class SelfRotation : TextRotation {
 	
 	//private float trueRadius;
 	void Start () {
+		base.Start();
 		initPos=postion;
 		angle=(int)Random.Range(0,359);
 		trueRadius=radios;
@@ -30,7 +31,7 @@ public class SelfRotation : TextRotation {
 	
 	// Update is called once per frame
 	void Update () {
-
+             base.Update();
 
 
 		postion=new Vector3(initPos.x+trueRadius* Mathf.Cos(angle/180*3.141f),initPos.y+trueRadius* Mathf.Sin(angle/180*3.141f),postion.z);

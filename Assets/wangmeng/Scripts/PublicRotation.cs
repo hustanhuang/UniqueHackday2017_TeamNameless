@@ -21,13 +21,14 @@ public class PublicRotation : TextRotation {
 	
 	
 	public void Start () {
+		base.Start();
 		centerPosition=(transform.localPosition+AnothorTrans.localPosition)/2;
 		trueRadius=radios;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		  base.Update();
 	postion=new Vector3(centerPosition.x+trueRadius* Mathf.Cos(angle/180*3.141f),centerPosition.y+trueRadius* Mathf.Sin(angle/180*3.141f),postion.z);
 		angle=(angle+rotateSpeed)%360;
 	}

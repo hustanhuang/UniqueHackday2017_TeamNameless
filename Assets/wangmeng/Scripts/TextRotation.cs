@@ -14,15 +14,25 @@ public class TextRotation : MonoBehaviour {
 
 	
 
+    private float beginTime;
+	private float readTime=0;
 
 	
 	public virtual void Start () {
-		
+		beginTime=Time.time;
+		//readTime=Time.time;
 	}
 	
 	// Update is called once per frame
 	 public virtual void Update () {
-		if(trueRadius<3)radios=0;
+		if(trueRadius<1){
+			trueRadius=0;
+		    ChangeRadius.changeRadius.Reading=true;
+          readTime=Time.time-readTime;
+
+		Debug.Log("胜利");
+		
+		}
 	}
 
 	
