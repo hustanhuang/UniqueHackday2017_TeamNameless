@@ -63,6 +63,7 @@ public class LeftClipHelper : MonoBehaviour {
             MainText.text = "";
             NoteText.text = "";
             Controller02.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 

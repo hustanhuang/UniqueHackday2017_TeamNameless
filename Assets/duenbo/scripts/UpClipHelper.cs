@@ -65,6 +65,7 @@ public class UpClipHelper : MonoBehaviour {
             MainText.text = "";
             NoteText.text = "";
             Controller04.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 
