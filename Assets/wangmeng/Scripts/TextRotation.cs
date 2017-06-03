@@ -22,17 +22,27 @@ public class TextRotation : MonoBehaviour {
 		beginTime=Time.time;
 		//readTime=Time.time;
 	}
-	
+	bool succeed=false;
 	// Update is called once per frame
 	 public virtual void Update () {
 		if(trueRadius<1){
+			// succeed=true;
+			readTime=Time.time-readTime;
+
+            if(succeed)return;
+			succeed=true;
 			trueRadius=0;
 		    ChangeRadius.changeRadius.Reading=true;
-          readTime=Time.time-readTime;
+        
 
-		Debug.Log("胜利");
+		   Debug.Log("胜利");
 		
 		}
+		else setFalse();
+	}
+	public void setFalse()
+	{
+		succeed=false;
 	}
 
 	

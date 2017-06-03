@@ -70,7 +70,9 @@ public class ChangeRadius : MonoBehaviour {
 		Reading=false;
 		float posx=Random.Range(0,Screen.width);
 		float posy=Random.Range(0,Screen.height);
-
+          
 		DOTween.To(() => targetPosition, x => targetPosition = x, new Vector3(posx,posy,0), 1f);
+
+		print(posx+" "+posy);
 	}
 }
