@@ -39,7 +39,7 @@ public class ChangeRadius : MonoBehaviour {
 		
 		targetPosition=new Vector3(Screen.width/2,Screen.height/2,0);
 		//print(targetPosition);
-         Cursor.visible=false;
+        // Cursor.visible=false;
 
 	}
 	
@@ -58,6 +58,7 @@ public class ChangeRadius : MonoBehaviour {
 	   for(int i=0;i<textRotation.Length;i++)
 	   {
 		   textRotation[i].trueRadius=textRotation[i].radios*(movePosition-targetPosition).magnitude/1000;
+		   textRotation[i].rotateSpeed=1/(movePosition-targetPosition).magnitude*1000;
 	   }
      
 
