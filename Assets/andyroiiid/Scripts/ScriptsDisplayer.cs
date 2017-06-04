@@ -51,13 +51,19 @@ public class ScriptsDisplayer : MonoBehaviour
 
     public void ChangeText()
     {
-        Debug.Log("set text " + _texts[_progess]);
-        text.SetText(_texts[_progess++]);
+        SendMessage("OnChangeTextStart", _progess);
+        text.SetText(_texts[_progess]);
 
         Sequence seq = DOTween.Sequence();
         seq.Append(DOTween.To(() => GetAlpha(text), (x) => SetAlpha(text, x), 1, switchTime));
         seq.AppendInterval(onTime);
         seq.Append(DOTween.To(() => GetAlpha(text), (x) => SetAlpha(text, x), 0, switchTime));
+
+        // 这里不知道是什么鬼
+        // 反正可以工作了
+        seq.AppendCallback(() => SendMessage("OnChangeTextEnd", _progess - 1));
+
+        _progess++;
 
         if (_progess == _texts.Length)
             seq.AppendCallback(() => Debug.Log("end of scripts"));
