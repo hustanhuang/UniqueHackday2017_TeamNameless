@@ -2,31 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chanjiao : MonoBehaviour {
+public class Chanjiao : MonoBehaviour
+{
+    public AudioSource sound;
 
-	// Use this for initialization
-	float time;
-	float randomTime;
-	void Start () {
-		time=Time.time;
-		randomTime=Random.Range(20,25);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(Time.time-time>=randomTime)
-		{
-                   
+    // Use this for initialization
+    float time;
+    float randomTime;
+    void Start()
+    {
+        time = Time.time;
+        randomTime = Random.Range(5, 10);
+    }
 
-           
-                ChangeRadius.changeRadius.ChangePos();
-                      
-				Debug.Log("蝉叫");
+    // Update is called once per frame
+    void Update()
+    {
+        if (Time.time - time >= randomTime)
+        {
 
 
 
-                   time=Time.time;
-				   randomTime=Random.Range(20,25);
-		}
-	}
+            ChangeRadius.changeRadius.ChangePos();
+
+            sound.Play();
+
+            time = Time.time;
+            randomTime = Random.Range(20, 25);
+        }
+    }
 }
