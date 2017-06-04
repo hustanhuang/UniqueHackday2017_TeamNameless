@@ -13,6 +13,8 @@ public class ScriptsDisplayer : MonoBehaviour
     public float switchTime = 1.0f;
     public float onTime = 2.0f;
 
+    public string nextScene;
+
     public TextAsset json;
     [System.Serializable]
     public class Scripts
@@ -66,7 +68,7 @@ public class ScriptsDisplayer : MonoBehaviour
         _progess++;
 
         if (_progess == _texts.Length)
-            seq.AppendCallback(() => Debug.Log("end of scripts"));
+            seq.AppendCallback(() => GameObject.Find("Managers").GetComponent<SceneSwitcher>().Goto(nextScene));
         else
             seq.AppendCallback(() => StartCoroutine(WaitAndChangeText()));
     }
