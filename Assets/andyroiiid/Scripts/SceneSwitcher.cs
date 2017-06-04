@@ -10,12 +10,19 @@ public class SceneSwitcher : MonoBehaviour
 
     public ScreenMask mask;
 
+    public string nextScene;
+
     private AsyncOperation _asyncOpertaion = null;
 
     void Start()
     {
         // 进入场景时播放遮蔽从有到无
         mask.Switch(false, maskTime);
+    }
+
+    public void Goto()
+    {
+        Goto(nextScene);
     }
 
     public void Goto(string scene)

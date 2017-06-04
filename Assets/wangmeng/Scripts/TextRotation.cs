@@ -38,7 +38,7 @@ public class TextRotation : MonoBehaviour
             trueRadius = 0;
             ChangeRadius.changeRadius.Reading = true;
 
-            GameObject.Find("Managers").GetComponent<SceneSwitcher>().Goto("Day1Mid");
+            GameObject.Find("Managers").GetComponent<SceneSwitcher>().Goto();
         }
         else setFalse();
     }
